@@ -3,10 +3,9 @@ var fs = require('fs');
 var config = false;
 try {
     fs.accessSync(`${process.cwd()}/config/app.js`, fs.F_OK);
-    console.log(`${process.cwd()}/config/app`);
     config = require(`${process.cwd()}/config/app`);
 } catch (e) {
-    config = require(`${__dirname}/../config/app`);
+    config = require(`${__dirname}/../../config/app`);
 }
 
 module.exports = cronBehavior;
