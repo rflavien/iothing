@@ -1,6 +1,6 @@
 {
   "name": "iothing",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A Node Framework for IoT",
   "main": "index.js",
   "scripts": {
