@@ -1,7 +1,7 @@
 # iothing
 A Node Framework for IoT
 
-[![iothing Logo](http://rflavien.github.io/images/iothing-logo.svg | height=200)](http://rflavien.github.io/iothing)
+[![iothing Logo](http://rflavien.github.io/images/iothing-logo.svg)](http://rflavien.github.io/iothing)
 
 ```js
 var iothing = require('iothing')
