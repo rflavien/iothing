@@ -1,25 +1,25 @@
 {
-    "name": "iothing",
-    "version": "0.0.5",
-    "description": "A Node Framework for IoT",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "keywords": [
-        "IoT"
-    ],
-    "author": "Flavien Rodrigues <rodrigues.flavien@gmail.com> (http://rflavien.github.io/)",
-    "license": "ISC",
-    "dependencies": {
-        "cron": "^1.1.0"
-    },
-    "repository" : {
-        "type" : "git",
-        "url" : "https://github.com/rflavien/iothing.git"
-    },
-    "bugs" : {
-        "url" : "https://github.com/rflavien/iothing/issues",
-        "email" : "rodrigues.flavien@gmail.com"
-    }
+  "name": "iothing",
+  "version": "0.0.6",
+  "description": "A Node Framework for IoT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "IoT"
+  ],
+  "author": "Flavien Rodrigues <rodrigues.flavien@gmail.com> (http://rflavien.github.io/)",
+  "license": "ISC",
+  "dependencies": {
+    "cron": "^1.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rflavien/iothing.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rflavien/iothing/issues",
+    "email": "rodrigues.flavien@gmail.com"
+  }
 }
