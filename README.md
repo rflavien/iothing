@@ -1,8 +1,6 @@
 # iothing
 A Node Framework for IoT
 
-[![iothing Logo](http://rflavien.github.io/images/iothing-logo.svg)](http://rflavien.github.io/iothing)
-
 ```js
 var iothing = require('iothing')
 var thing = iothing.get('thingInstance')
@@ -76,3 +74,7 @@ thing.on('night', function () {
     thing.run('turn-on-garden-lights')
 })
 ```
+
+## Documentation
+- [Documentation page](http://rflavien.github.io/iothing)
+- [GitHub repository](https://github.com/rflavien/iothing)
