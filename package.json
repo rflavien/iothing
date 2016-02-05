@@ -12,7 +12,9 @@
   "author": "Flavien Rodrigues <rodrigues.flavien@gmail.com> (http://rflavien.github.io/)",
   "license": "ISC",
   "dependencies": {
-    "cron": "^1.1.0"
+    "cron": "^1.1.0",
+    "express": "^4.13.4",
+    "slug": "^0.9.1"
   },
   "repository": {
     "type": "git",

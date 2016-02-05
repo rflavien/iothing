@@ -3,7 +3,8 @@ A Node Framework for IoT
 
 ```js
 var iothing = require('iothing')
-var thing = iothing.get('thingInstance')
+var thing_service = iothing.get('thing')
+var thing = thing_service.get('my-object')
 
 thing.action('turn-on-garden-lights', function() {
     console.log('garden lights on !!')
@@ -44,8 +45,12 @@ Bootstrap in __index.js__ :
 ```js
 // Loading the Framework
 var iothing = require('iothing')
-// Getting the thing instance
-var thing = iothing.get('thingInstance')
+// Loading some services
+var thing_service = iothing.get('thing')
+var message_service = iothing.get('message')
+
+// Getting a thing instance
+var thing = thing_service.get('my-object')
 
 // You can manage you gpio by overriding the value function
 thing.gpio({"pin":1}).value = function(value) {
@@ -55,12 +60,12 @@ thing.gpio({"pin":1}).value = function(value) {
     return "light is on"
 }
 
-// Then access your gpios
-console.log(thing.gpio({"pin":1}).value());
+// Then access your gpios value
+message_service.publish('log', thing.gpio({"pin":1}).value())
 
 // You can attach actions to your thing
 thing.action('turn-on-garden-lights', function() {
-    console.log(thing.gpio({"pin":1}).value(1))
+    message_service.broadcast(thing.gpio({"pin":1}).value(1))
 })
 
 // You can attach crons to your thing
