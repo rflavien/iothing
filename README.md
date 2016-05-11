@@ -33,13 +33,15 @@ $ touch index.js ./config/thing.js
 
 Configuration in __config/thing.js__ :
 ```js
-module.exports = {
-    name: 'my object',
-    ip: '127.0.0.1',
-    gpios: [
-        {name: 'light', pin :1}
-    ]
-}
+module.exports = [
+    {
+        name: 'my object',
+        ip: '127.0.0.1',
+        gpios: [
+            {name: 'light', pin :1}
+        ]
+    }    
+]
 ```
 Bootstrap in __index.js__ :
 ```js
