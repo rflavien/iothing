@@ -11,10 +11,8 @@ var Thing = require('./models/thing')
 var behavior_file_suffix = 'Behavior.js'
 var behavior_folder = `${__dirname}/behaviors`
 
-module.exports = thingService
-
 function thingService() {
-    this.things = []
+    this.things = {}
 
     things_config.forEach((thing) => {
         this.things[thing.id] = new Thing(thing)
@@ -31,6 +29,8 @@ function thingService() {
     })
 }
 
+thingService.instance = null
+
 thingService.prototype.get = function(id)
 {
     if(id in this.things) {
@@ -39,3 +39,12 @@ thingService.prototype.get = function(id)
         throw `Not Found`
     }
 }
+
+thingService.getInstance = function(){
+    if(this.instance === null){
+        this.instance = new thingService()
+    }
+    return this.instance
+}
+
+module.exports = thingService.getInstance()

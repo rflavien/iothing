@@ -12,7 +12,12 @@ function serviceManager() {
 
     services.forEach((service) => {
         var Service = require(`${service_path}/${service}/${service}${service_file_suffix}`)
-        this.services[service] = new Service()
+        if (typeof Service !== 'object') {
+            this.services[service] = new Service()
+        } else {
+            this.services[service] = Service
+        }
+
     })
 }
 
