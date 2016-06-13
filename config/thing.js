@@ -1,5 +1,6 @@
 module.exports = [
     {
+        id: '123-aze-456-rty',
         name: 'my object',
         ip: '127.0.0.1',
         gpios: [

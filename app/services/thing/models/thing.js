@@ -8,6 +8,7 @@ module.exports = thing
 function thing(options) {
     this.name = options.name
     this.ip = options.ip
+    this.id = options.id
 
     this.gpios = []
     options.gpios.forEach((gpio) => {

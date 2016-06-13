@@ -17,7 +17,7 @@ function thingService() {
     this.things = []
 
     things_config.forEach((thing) => {
-        this.things[text_helper.slug(thing.name)] = new Thing(thing)
+        this.things[thing.id] = new Thing(thing)
 
         var files = fs.readdirSync(behavior_folder)
 
@@ -25,15 +25,16 @@ function thingService() {
             return file.substr(-behavior_file_suffix.length) === behavior_file_suffix
         }).forEach((file) => {
             var Behavior = require(`${behavior_folder}/${file}`)
-            Behavior(this.things[text_helper.slug(thing.name)])
+            Behavior(this.things[thing.id])
         })
 
     })
 }
 
-thingService.prototype.get = function(thing) {
-    if(thing in this.things) {
-        return this.things[thing]
+thingService.prototype.get = function(id)
+{
+    if(id in this.things) {
+        return this.things[id]
     } else {
         throw `Not Found`
     }
