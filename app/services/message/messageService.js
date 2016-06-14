@@ -32,3 +32,14 @@ messageService.prototype.broadcast = function(message) {
         this.subscribers[subscriber].send(message)
     })
 }
+
+messageService.prototype.has = function(name) {
+    if (name in this.subscribers) {
+        return true
+    }
+    return false
+}
+
+messageService.prototype.register = function(name, subscriber) {
+    this.subscribers[name] = subscriber
+}
