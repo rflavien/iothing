@@ -14,9 +14,17 @@ var thing_service = require('../thing/thingService')
 module.exports = httpService
 
 function httpService() {
+
+    api.use(function(req, res, next)
+    {
+        res.header("Access-Control-Allow-Origin", "*")
+        res.header("Access-Control-Allow-Headers", "X-Requested-With")
+        next()
+    })
+
     api.use(function (req, res, next) {
       message_service.publish('log', `${req.method} ${req.url}`)
-      next();
+      next()
     });
 
     api.get('/', function (req, res) {
