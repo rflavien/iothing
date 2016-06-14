@@ -4,7 +4,7 @@ A Node Framework for IoT
 ```js
 var iothing = require('iothing')
 var thing_service = iothing.get('thing')
-var thing = thing_service.get('my-object')
+var thing = thing_service.get('id_1')
 
 thing.action('turn-on-garden-lights', function() {
     console.log('garden lights on !!')
@@ -35,6 +35,7 @@ Configuration in __config/thing.js__ :
 ```js
 module.exports = [
     {
+        id: 'id_1'
         name: 'my object',
         ip: '127.0.0.1',
         gpios: [
@@ -52,7 +53,7 @@ var thing_service = iothing.get('thing')
 var message_service = iothing.get('message')
 
 // Getting a thing instance
-var thing = thing_service.get('my-object')
+var thing = thing_service.get('id_1')
 
 // You can manage you gpio by overriding the value function
 thing.gpio({"pin":1}).value = function(value) {
