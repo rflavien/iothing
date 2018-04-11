@@ -1,6 +1,6 @@
 # iothing
 A Node Framework for IoT
-
+test
 ```js
 var iothing = require('iothing')
 var thing_service = iothing.get('thing')
